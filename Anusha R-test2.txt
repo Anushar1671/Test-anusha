@@ -1,0 +1,335 @@
+1. Expalin the concept of method overloading in Java. Provide example using static method.
+
+	Class which having same method name and different parameters that type of program is known as method overloading. We can overload the program by changing the datatype and adding different variables to the methods.
+
+class Person{
+static void name(){
+System.out.println("Invoking name in person");
+String name="Anusha";
+System.out.println("Person Name :"+name);
+
+Static void name(String jobExperience,float age){
+System.out.println("Person Job experience "+jobExperience+" age "+age);
+}
+static void name(String jobExperience,int age){
+System.out.println("Person job experience "+jobExperience+" age "+age);
+}
+public static void main(String[] args){
+System.out.println("Invoking main in Person")
+Person.name();
+Person.name(10,40.00f);
+Person.name(15,45);
+}
+}
+
+
+2.What are the different kinds of variables defined in java programming language? with example.
+	Variables in java programming
+1.Static variables
+2.Non-static variables
+3.Local variables
+4.Parametric variables
+
+1.Static variables: Static variables are used to call variables which are having constant values and static variables are declared within the class outside the method using static keyword.
+Ex: class Vehical{
+Static int wheels=2;
+static void bike(){
+System.out.println("Invoking bike in Vehical");
+}
+public static void main(String[] args){
+System.out.println("Invoking main in Vehical");
+}
+}
+
+2.Non-static variables: Non-static variables are the instance variables which are not constant we can change the value of the variables which are declared within the class outside the method.
+Ex: class Biscuit{
+String brand;
+static void brandName(){
+System.out.println("Invoking brandName in Biscuit");
+System.out.println("Biscuit name :"+brand);
+}
+public static void main(String[] args){
+System.out.println("Invoking main in Biscuit");
+}
+}
+
+3.Local variables: Local variables are declared within the class and within the method in a local scope.
+Ex: class Pen{
+static void penColor(){
+System.out.println("Invoking penColor in Pen");
+String color="Black";
+System.out.println("Pen color is :"+color);
+}
+public static void main(String[] args){
+System.out.println("Invoking main in Pen");
+}
+}
+
+4.Parametric variables: Parametric variables are the local variables which are declared within the method and within the paranthesis.
+Ex: class Movie{
+static void movie(String name,int rating){
+System.out.println("Invoking movie in Movie");
+String name="KGF";
+int rating=5;
+Sytem.out.println("Movie name :"+name+" rating "+rating);
+}
+public static void main(String[] args){
+System.out.println("Invoking main in Movie");
+}
+}
+
+3.What are the difference between Heap and Stack memory in Java?
+Heap memory
+Heap memory will created during the execution of java program by JVM. In Heap memory there are 4 block 
+1.Stack memory is created when the java program begins execution it will creates a frame to store the methods which will store the method name and line number
+2.Meta space which store the information of the program the data of the class will store in meta space
+3.Constant pool which will store the primitive variables and constant values 
+4.Instance Memory which will create a space to process the data and it contains the non primitive data after exectution of the data it will store the values in the stack
+Stack Memory: Stack memory will store the data in first in last out format it will creates a frame to execute every method present in the program. Whch contains the name of the method. When the progem executes the frame will removed from the stack.
+
+
+4.write a program to constructor overloading.
+	
+class Movie{
+String name;
+int rating;
+String hero;
+
+Movie(){
+System.out.println("Invoking no-arg constructor in Movie");
+}
+Movie(String name){
+this.name=name;
+System.out.println("Invoking String constructor in Movie");
+System.out.println(this.name);
+}
+Movie(String name,int rating){
+this.name=name;
+this.rating=rating;
+System.out.println("Invoking String,int constructor in Movie");
+System.out.println(this.name);
+System.out.println(this.rating);
+}
+Movie(String name,int rating,String hero){
+this.name=name;
+this.rating=rating;
+this.hero=hero;
+System.out.println("Invoking String,int,String constructor in Movie");
+System.out.println(this.name);
+System.out.println(this.rating);
+System.out.println(this.hero);
+}
+public static void main(String[] args){
+Movie movie=new Movie();
+System.out.println(movie.name);
+Movie movie1=new Movie();
+System.out.println(movie1.name);
+System.out.println(movie1.rating);
+Movie movie2=new Movie();
+System.out.println(movie2.name);
+System.out.println(movie2.rating);
+System.out.println(movie2.hero);
+}
+}
+
+5.write a program for instance method overloading in java.
+class Book{
+static void name(){
+System.out.println("Invoking name in Book");
+}
+static void name(String brand){
+System.out.println("Invoking name in Book");
+String brand="classmate";
+System.out.println("Brand :"+brand);
+}
+static void name(String brand, int cost){
+System.out.println("Invoking name in Book");
+String brand="classmate";
+int cost=50;
+System.out.println("Brand :"+brand);
+System.out.println("Cost :"+cost);
+}
+}
+public static void main(String[] args){
+System.out.println("Invoking main in Book");
+}
+}
+
+6.write a program to static variable and static method.
+
+class Laptop{
+Static void company(){
+System.out.println("Invoking company in Laptop");
+Static brand="Dell";
+int price=50000;
+
+Laptop(int price){
+System.out.println("Price of laptop "+price);
+}
+static void printStatic(){
+System.out.println("Laptop brand "+brand);
+}
+static void printInstance(){
+System.out.println("Laptop price");
+}
+}
+public static void main(String[] args){
+System.out.println("Invoking main in Laptop");
+Laptop laptop=new Laptop();
+Laptop.printStatic;
+laptop.printInstance;
+}
+}
+
+
+
+7.write a program to constructor chaining using this keyword
+class Movie{
+String name;
+int rating;
+String hero;
+
+Movie(){
+System.out.println("Invoking no-arg constructor in Movie");
+}
+Movie(String name){
+this.name=name;
+System.out.println("Invoking String constructor in Movie");
+System.out.println(this.name);
+}
+Movie(String name,int rating)
+this(name);
+this.rating=rating;
+System.out.println("Invoking String,int constructor in Movie");
+System.out.println(this.name);
+System.out.println(this.rating);
+}
+Movie(String name,int rating,String hero){
+this(name,rating);
+this.hero=hero;
+System.out.println("Invoking String,int,String constructor in Movie");
+System.out.println(this.name);
+System.out.println(this.rating);
+System.out.println(this.hero);
+}
+public static void main(String[] args){
+Movie movie=new Movie();
+System.out.println(movie.name);
+Movie movie1=new Movie();
+System.out.println(movie1.name);
+System.out.println(movie1.rating);
+Movie movie2=new Movie();
+System.out.println(movie2.name);
+System.out.println(movie2.rating);
+System.out.println(movie2.hero);
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
